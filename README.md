@@ -67,9 +67,9 @@
     automatically provides a CLI interface in order to get things done easily.
 
     ```
-    npx sequelize init
+        npx sequelize init
     
-    this command will initialize basic folders and configuration
+        this command will initialize basic folders and configuration
     ```
 
     then inside config/config.json file we have our code that will actually connect to the
@@ -78,10 +78,32 @@
 
     As soon as we are done with the changes run the following command.
 
-    npx sequelize db:create
+         npx sequelize db:create
 
-    this will actually create a new database in mysql
-    
+         this will actually create a new database in mysql
+
+##  Creating Tables
+
+    So in order to create tables we can use the following command
+    ```
+        npx sequelize model:generate --name student --attribute name:string, age:integer
+    ```
+
+    here the name is mentioning the name of the table and the -attribute are mentioning the column
+    and the types of the command of the tables.
+
+    The moment we execute this command we get a model file, and a migration file. migration file
+    contains the actual code that sequelize executes for creating the table, if we want to make some
+    changes in the schema, we can change the migration file. once we are sure about the change 
+
+    we can execute
+        ```
+            npx sequelize db:migrate
+        ```
+
+
+
+
 ##
 ##
 ##
