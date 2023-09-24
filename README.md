@@ -104,8 +104,27 @@
 
 
 
-##
-##
-##
-##
-##
+## Querying with JS
+
+const express = require('express');
+const app = express();
+const Student = require('./models/index').Student;
+
+console.log(Student);
+app.listen(3000, async () -> {
+    console.log("server started");
+
+    const new_student = await Student.create({name:"Abc", age:23});
+    console.log(new_student);
+    const all_student = await Student.findAll();
+    console.log(all_student);
+});
+
+
+
+So, in order to use the models to interact with the tables, we can get the index file from models
+folder require('./models/index') this will return an object that has access to the tables, so
+we can do .student to access the student table.
+
+
+Then we can use Student.create, Student.findAll etc query on the tables.
