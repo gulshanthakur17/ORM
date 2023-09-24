@@ -40,9 +40,48 @@
     EXPRESS SERVER-------> MYSQL SERVER and this connection and request cycle will be
     handled automatically by our ORM.
 
-##
-##
-##
+## Schema
+
+    Schema is the blue print of your relational databse. Example: we define that we will have one
+    table named student, with 3 columns, name as varchar, age as int, marks as int.
+
+    Schema migration refers to any change to the schema being recorded.
+
+    whenever we change something in the schema it acts as a new migration.
+
+## Development, Test and Production Db
+
+    Development databse will be your local database, residing in your own computer, so every 
+    developer will be having their own local development database.
+
+    Test db is setup for testing new features that we are going to release, and that is generally
+    common for all developers.
+
+    prodeuction db is the actual live database that your application interacts with when users do some
+    action on the application.
+
+
+## Setting up Sequelize
+
+    So in order to setup basic sequelize we can manually create configuration and folders, but it 
+    automatically provides a CLI interface in order to get things done easily.
+
+    ```
+    npx sequelize init
+    
+    this command will initialize basic folders and configuration
+    ```
+
+    then inside config/config.json file we have our code that will actually connect to the
+    mysql server. in that code all we have to do is just change the name database, whatever we want
+    to keep and the username and password of our mysql server we need to feed.
+
+    As soon as we are done with the changes run the following command.
+
+    npx sequelize db:create
+
+    this will actually create a new database in mysql
+    
 ##
 ##
 ##
