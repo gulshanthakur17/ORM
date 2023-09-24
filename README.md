@@ -106,19 +106,19 @@
 
 ## Querying with JS
 
-const express = require('express');
-const app = express();
-const Student = require('./models/index').Student;
+    const express = require('express');
+    const app = express();
+    const Student = require('./models/index').Student;
 
-console.log(Student);
-app.listen(3000, async () -> {
-    console.log("server started");
+    console.log(Student);
+    app.listen(3000, async () -> {
+        console.log("server started");
 
-    const new_student = await Student.create({name:"Abc", age:23});
-    console.log(new_student);
-    const all_student = await Student.findAll();
-    console.log(all_student);
-});
+        const new_student = await Student.create({name:"Abc", age:23});
+        console.log(new_student);
+        const all_student = await Student.findAll();
+        console.log(all_student);
+    });
 
 
 
